@@ -5,6 +5,7 @@ import StudentsList from './StudentsList';
 import AdminLogin from './AdminLogin';
 import AdminDashboard from './AdminDashboard';
 import "./App.css";
+import background from "./assets/background.jpg";
 
 const App: React.FC = () => {
   const [showStudentsList, setShowStudentsList] = useState(false);
@@ -46,7 +47,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{ 
+      backgroundImage: `url(${background})`,
+      backgroundSize: "cover",
+      minHeight: "100vh" 
+    }}>
       <Navbar onStudentsListClick={handleStudentsListClick} onAdminLoginClick={handleAdminLoginClick} />
       <div className="p-4">
         {showStudentsList ? <StudentsList /> : null}
