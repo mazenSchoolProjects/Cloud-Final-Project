@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Add background and edit its size to fit hte whole page */
+body {
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    min-height: 100vh;
+}

@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import StudentsList from './StudentsList';
 import AdminLogin from './AdminLogin';
 import AdminDashboard from './AdminDashboard';
+import "./App.css";
 
 const App: React.FC = () => {
   const [showStudentsList, setShowStudentsList] = useState(false);
