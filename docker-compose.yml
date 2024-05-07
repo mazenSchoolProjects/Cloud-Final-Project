@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: collage
+
+  server:
+    build: ./server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  client:
+    build: ./client
+    ports:
+      - "4173:4173"
+    depends_on:
+      - server
